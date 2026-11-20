@@ -6,3 +6,6 @@
 /* Campaign phone contact */
 .header-contact{text-align:right;display:flex;flex-direction:column;align-items:flex-end;gap:3px}.header-phone{font:800 23px/1.3 Manrope,sans-serif;text-decoration:none;color:var(--navy)}.header-phone:hover{text-decoration:underline}.header-contact .area{font-size:12px}.sticky .call-btn{background:white;color:var(--navy);border:2px solid var(--navy)}
 @media(max-width:700px){.header-phone{font-size:17px;white-space:nowrap}.header-contact .area{font-size:10px;max-width:150px;line-height:1.4}.header-contact .area svg{width:13px;height:13px;flex-shrink:0}.brandbar{gap:12px}.sticky{gap:10px;padding-bottom:max(12px,env(safe-area-inset-bottom))}.sticky .btn{width:auto;flex:1;font-size:14px;padding:13px 10px}.sticky .call-btn{flex:0 0 35%}}
+
+/* Match the main website mobile action bar. */
+@media(max-width:700px){.sticky{display:flex;padding:12px 20px;padding-bottom:max(12px,env(safe-area-inset-bottom));gap:10px;z-index:20;box-shadow:0 -2px 16px #082c5515}.sticky .btn{width:auto;min-height:0;padding:14px;flex:1;font-size:13px;border:0;border-radius:6px}.sticky .call-btn{background:var(--navy);color:#fff;flex:0 0 90px}.sticky .call-btn:hover{background:#123f70}}
