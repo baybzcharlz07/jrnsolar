@@ -8,6 +8,8 @@ foreach (['utm_source','utm_medium','utm_campaign','utm_content','utm_term','ad_
     if (isset($_GET[$key]) && is_string($_GET[$key])) { $_SESSION['campaign_tags'][$key]=substr(strip_tags($_GET[$key]),0,240); }
 }
 $error=$_SESSION['form_error'] ?? ''; $old=$_SESSION['form_old'] ?? []; unset($_SESSION['form_error'],$_SESSION['form_old']);
+if (empty($old['city']) && is_string($_GET['estimate_city'] ?? null)) { $old['city']=substr(trim($_GET['estimate_city']),0,120); }
+if (empty($old['bill']) && is_scalar($_GET['monthly_bill'] ?? null) && is_numeric($_GET['monthly_bill'])) { $n=(float)$_GET['monthly_bill']; $old['bill']=$n<3000?'Below ₱3,000':($n<=5000?'₱3,000–₱5,000':($n<=10000?'₱5,001–₱10,000':($n<=20000?'₱10,001–₱20,000':'Above ₱20,000'))); }
 function oldval(string $name): string { global $old; return esc($old[$name] ?? ''); }
 ?><!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Explore JRN Solar installation packages: 3 kW, 5 kW and 16 kW setups, battery options and starting prices. Request a property-specific quotation."><meta name="theme-color" content="#082c55"><title>Solar Installation Packages &amp; Pricing | JRN Solar</title><style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
