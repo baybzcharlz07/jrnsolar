@@ -6,12 +6,12 @@ RewriteEngine On
 RewriteCond %{THE_REQUEST} \s/+index\.(?:html|php)(?:[?\s]) [NC]
 RewriteRule ^index\.(?:html|php)$ / [R=301,L]
 
-RewriteCond %{THE_REQUEST} \s/+(services|about|quote)\.html(?:[?\s]) [NC]
-RewriteRule ^(services|about|quote)\.html$ /$1 [R=301,L]
+RewriteCond %{THE_REQUEST} \s/+(services|about|quote|pricing)\.html(?:[?\s]) [NC]
+RewriteRule ^(services|about|quote|pricing)\.html$ /$1 [R=301,L]
 
 # Serve the existing HTML files internally while keeping clean URLs.
-RewriteRule ^(services|about|quote)/$ /$1 [R=301,L]
-RewriteRule ^(services|about|quote)$ $1.html [L]
+RewriteRule ^(services|about|quote|pricing)/$ /$1 [R=301,L]
+RewriteRule ^(services|about|quote|pricing)$ $1.html [L]
 
 # Campaign funnel: no links to the main website.
 RewriteRule ^installnow/$ /installnow [R=301,L]
