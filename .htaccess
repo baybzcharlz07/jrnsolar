@@ -9,6 +9,9 @@ RewriteRule ^index\.(?:html|php)$ / [R=301,L]
 RewriteCond %{THE_REQUEST} \s/+(services|about|quote|pricing)\.html(?:[?\s]) [NC]
 RewriteRule ^(services|about|quote|pricing)\.html$ /$1 [R=301,L]
 
+# Serve pricing with the saved-inquiry PHP form.
+RewriteRule ^pricing$ pricing.php [L]
+
 # Serve the existing HTML files internally while keeping clean URLs.
 RewriteRule ^(services|about|quote|pricing)/$ /$1 [R=301,L]
 RewriteRule ^(services|about|quote|pricing)$ $1.html [L]
