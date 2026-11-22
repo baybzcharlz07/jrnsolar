@@ -1,10 +1,10 @@
 Options -MultiViews
-DirectoryIndex index.html
+DirectoryIndex index.php index.html
 RewriteEngine On
 
 # Redirect requested HTML URLs to their canonical clean URLs.
-RewriteCond %{THE_REQUEST} \s/+index\.html(?:[?\s]) [NC]
-RewriteRule ^index\.html$ / [R=301,L]
+RewriteCond %{THE_REQUEST} \s/+index\.(?:html|php)(?:[?\s]) [NC]
+RewriteRule ^index\.(?:html|php)$ / [R=301,L]
 
 RewriteCond %{THE_REQUEST} \s/+(services|about|quote)\.html(?:[?\s]) [NC]
 RewriteRule ^(services|about|quote)\.html$ /$1 [R=301,L]
